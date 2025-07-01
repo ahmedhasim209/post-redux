@@ -23,7 +23,7 @@ const AddPostForm = () => {
     [title, content, userId].every(Boolean) && addRequestStatus === "idle";
 
   const onSavePostClicked = (e) => {
-    e.preventDefault(); // <-- ADD THIS
+    e.preventDefault();
     if (canSave) {
       try {
         setAddRequestStatus("pending");

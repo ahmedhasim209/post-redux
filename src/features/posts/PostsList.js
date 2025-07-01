@@ -39,12 +39,7 @@ const postsList = () => {
     content = <p>{error}</p>;
   }
 
-  return (
-    <section>
-      <h2>Posts</h2>
-      {content}
-    </section>
-  );
+  return <section>{content}</section>;
 };
 
 export default postsList;
