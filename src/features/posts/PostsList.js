@@ -1,28 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectAllPosts,
-  getPostsStatus,
-  getPostsError,
-  fetchposts,
-} from "./postsSlice";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectAllPosts, getPostsStatus, getPostsError } from "./postsSlice";
 import PostsExcerpt from "./PostsExcerpt";
 
 const postsList = () => {
-  const dispatch = useDispatch();
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(getPostsStatus);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const error = useSelector(getPostsError);
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchposts());
-    }
-  });
 
   let content;
   if (postsStatus === "loading") {

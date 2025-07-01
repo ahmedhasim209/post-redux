@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-export const fetchposts = createAsyncThunk("posts/fetchposts", async () => {
+export const fetchPosts = createAsyncThunk("posts/fetchposts", async () => {
   try {
     const response = await axios.get(POSTS_URL);
     return [...response.data];
@@ -39,7 +39,8 @@ export const updatePost = createAsyncThunk(
       const response = await axios.put(`${POSTS_URL}/${id}`, initialPost);
       return response.data;
     } catch (err) {
-      return err.message;
+      // return err.message;
+      return initialPost;
     }
   }
 );
@@ -95,10 +96,10 @@ const postsSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchposts.pending, (state, action) => {
+      .addCase(fetchPosts.pending, (state, action) => {
         state.status = "loading";
       })
-      .addCase(fetchposts.fulfilled, (state, action) => {
+      .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
         let min = 1;
         const loadedPosts = action.payload.map((post) => ({
@@ -114,7 +115,7 @@ const postsSlice = createSlice({
         }));
         state.posts = loadedPosts;
       })
-      .addCase(fetchposts.rejected, (state, action) => {
+      .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })
