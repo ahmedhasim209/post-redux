@@ -1,52 +1,34 @@
 Post Redux
 A React + Redux project that displays posts, allows creating new posts, reacting to them, and editing them, with asynchronous data fetching from JSONPlaceholder.
 
-##🌐 Demo: post-redux.netlify.app
-##📦 Repository: github.com/ahmedhasim209/post-redux
+🌐 Demo: post-redux.netlify.app
+📦 Repository: github.com/ahmedhasim209/post-redux
 
-##🚀 Features
+🚀 Features
 Fetch posts from JSONPlaceholder API
 
-Add new posts with title, content, and author
+* Add new posts with title, content, and author
 
-Edit existing posts
+* Edit existing posts
 
-Add emoji reactions to posts
+* Add emoji reactions to posts
 
-Redux Toolkit state management
+* Redux Toolkit state management
 
-Async Thunks for data fetching
+* Async Thunks for data fetching
 
-User-friendly UI
+* User-friendly UI
 
-##🛠️ Built With
-React
+🛠️ Built With
 
-Redux Toolkit
+* React
+* Redux Toolkit
+* React Router
+* JSONPlaceholder API
 
-React Router
-
-JSONPlaceholder API
-
-📂 Folder Structure
-
-src/
-  ├── app/
-  │   └── store.js
-  ├── features/
-  │   └── posts/
-  │       ├── postsSlice.js
-  │       └── PostsList.js
-  ├── components/
-  ├── App.js
-  └── index.js
-  
 📦 Installation
 Clone the repository:
-
-
 git clone https://github.com/ahmedhasim209/post-redux.git
-
 
 Install dependencies:
 npm install
@@ -54,7 +36,7 @@ Start the development server:
 npm start
 The app will be running at http://localhost:3000.
 
-##📌 Usage
+📌 Usage
 View all posts on the home page.
 
 Click Add Post to create a new one.
@@ -74,4 +56,3 @@ This project is open source. No specific license is applied—feel free to use i
 
 🙋‍♂️ Author
 Ahmed Hashim
-GitHub Profile
